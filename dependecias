@@ -1,0 +1,17 @@
+Mux
+github.com/gorilla/mux
+
+dotEnv
+github.com/joho/godotenv
+
+mysql conector
+github.com/go-sql-driver/mysql
+
+Validações de email
+github.com/badoux/checkmail
+
+BCRYPT
+golang.org/x/crypto/bcrypt
+
+Gerador de Token
+github.com/dgrijalva/jwt-go
