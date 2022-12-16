@@ -35,15 +35,15 @@ func (usuario *Usuario) Preparar(etapa string) error {
 
 func (u *Usuario) validar(etapa string) error {
 
-	if erro := validated(u.Nome, "nome", etapa); erro != nil {
+	if erro := u.validated(u.Nome, "nome", etapa); erro != nil {
 		return erro
 	}
 
-	if erro := validated(u.Nick, "nick", etapa); erro != nil {
+	if erro := u.validated(u.Nick, "nick", etapa); erro != nil {
 		return erro
 	}
 
-	if erro := validated(u.Email, "email", etapa); erro != nil {
+	if erro := u.validated(u.Email, "email", etapa); erro != nil {
 		return erro
 	}
 
@@ -51,13 +51,13 @@ func (u *Usuario) validar(etapa string) error {
 		return errors.New("Email não é válido")
 	}
 
-	if erro := validated(u.Senha, "senha", etapa); erro != nil {
+	if erro := u.validated(u.Senha, "senha", etapa); erro != nil {
 		return erro
 	}
 	return nil
 }
 
-func validated(text string, campo string, etapa string) error {
+func (u *Usuario) validated(text string, campo string, etapa string) error {
 	if etapa == "cadastro" && text == "" {
 		return errors.New(fmt.Sprintf("O %s não pode estar em branco", campo))
 	}

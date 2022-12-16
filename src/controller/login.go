@@ -42,7 +42,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if erro = seguranca.VerificarSenha(usuario.Senha, usuarioSalvoNoBanco.Senha); erro != nil {
+	if erro = seguranca.VerificarSenha(usuarioSalvoNoBanco.Senha, usuario.Senha); erro != nil {
 		respostas.Erro(w, http.StatusUnauthorized, erro)
 		return
 	}

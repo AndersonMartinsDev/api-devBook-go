@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "835f7bdf-cbc1-4615-80c6-49b8b9d1abfb",
+		"name": "Usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8356863"
+	},
+	"item": [
+		{
+			"name": "Insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Usuario Autenticador\",\r\n    \"nick\":\"autenticador\",\r\n    \"email\": \"autenticador@gmail.com.br\",\r\n    \"senha\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/usuarios",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 1 usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/usuarios/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzEwNjQ2MTUsInVzdWFyaW9JZCI6Nn0.yprCyZP9n60AYJJDP5VU1NAcg0ycQpPhJEBm6_Z1X4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 6,\r\n        \"nome\": \"novo Menino 2\",\r\n        \"nick\": \"novoMenito2\",\r\n        \"email\": \"novoMenito2@gmail.com.br\",\r\n        \"CriadoEm\": \"2022-12-14T13:36:54-03:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/usuarios/6",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzEwNjQ2MTUsInVzdWFyaW9JZCI6Nn0.yprCyZP9n60AYJJDP5VU1NAcg0ycQpPhJEBm6_Z1X4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/usuarios/5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"usuarios",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ALL Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzEwNjMyMzksInVzdWFyaW9JZCI6N30.LUOM_DeXYAAWXtR3fSeFKOcIn5vbMJ4MyJwVMYNkV2U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/usuarios",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seguidor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/usuarios/2/seguir",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"usuarios",
+						"2",
+						"seguir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parar-de-seguir",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzExMzAxMDEsInVzdWFyaW9JZCI6MX0.4crZP0-fGUDk4IqZpwWHwP3MRNEdAuOywr4gSlM6x9A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/usuarios/2/seguingo",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"usuarios",
+						"2",
+						"seguingo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtualizarSenha",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzEyMjE1OTQsInVzdWFyaW9JZCI6MX0.tXdLKNngjNVpvQahRjV83uVJZyLFVLIOSMYqHH4epOM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"atual\":\"78910\",\r\n    \"nova\":\"7891011\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host }}/usuarios/1/atualizar-senha",
+					"host": [
+						"{{host }}"
+					],
+					"path": [
+						"usuarios",
+						"1",
+						"atualizar-senha"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"usuario1@gmail.com\",\r\n    \"senha\":\"7891011\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "host ",
+			"value": "localhost:5000"
+		}
+	]
+}

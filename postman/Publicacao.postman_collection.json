@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "459f78ac-ad35-4f9d-b7b7-1de3d56caedc",
+		"name": "Publicacao",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8356863"
+	},
+	"item": [
+		{
+			"name": "Insert Publicação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\":\"Minha primeira publicação\",\r\n    \"conteudo\":\"Olá Mundo!Minha primeira publicação \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/publicacoes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"publicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPublicacoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/publicacoes/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"publicacoes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publicações",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/publicacoes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"publicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Um titulo novo para ela \",\r\n    \"conteudo\":\"Um novo conteudo para ela \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/publicacoes/3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"publicacoes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar publicação",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/publicacoes/3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"publicacoes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Especifico",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Curtir Publicação",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Descutir",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzEyMjQzNjcsInVzdWFyaW9JZCI6Mn0.ruK6D1cK0GctNyAtuN9JRIercnaKiDu5BvBQuPLYb6Y",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
